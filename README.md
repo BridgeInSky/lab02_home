@@ -1,6 +1,8 @@
 # lab02_home
 <details>
   <summary>Part 1</summary>
+    </p>
+
   1. Создайте пустой репозиторий на сервисе github.com (или gitlab.com, или bitbucket.com).
 <br>
 <p>Создадим пустой репозиторий - <a href="http://google.com/](https://github.com/BridgeInSky/Repos"
@@ -152,3 +154,20 @@ To https://github.com/BridgeInSky/Repos.git
 10. Проверьте, что история коммитов доступна в удалёный репозитории.<br>
 <p> <a href="https://github.com/BridgeInSky/Repos/commits?author=BridgeInSky"
 title="Ссылка на коммиты">Ссылка на коммиты</a> <br>
+  </p>
+</details>
+
+<details>
+  <summary>Part 2</summary>
+  <p> 
+  <br>
+    
+  1. В локальной копии репозитория создайте локальную ветку ```patch```
+  2. Внесите изменения в ветке patch1 по исправлению кода и избавления от ```using namespace std;```.
+  3. ```commit```, ```push``` локальную ветку в удалённый репозиторий.
+  4. Проверьте, что ветка patch1 доступна в удалёный репозитории.
+  5. Создайте ```pull-request patch1 -> master```.
+  6. В локальной копии в ветке ```patch1``` добавьте в исходный код комментарии.
+  7. ```commit, push```.
+  8. Проверьте, что новые изменения есть в созданном на шаге 5 ```pull-request```
+  9. 
