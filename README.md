@@ -210,26 +210,131 @@ branch 'patch1' set up to track 'origin/patch1'.
 <p><a href="https://github.com/BridgeInSky/Repos/branches"
 title="ссылка для проверки доступа ветки">ссылка для проверки доступа ветки</a> <br>
   5. Создайте ```pull-request patch1 -> master```.<br>
+  Работаем непосредственно в GitHub.
 <img width="50%" height="auto" src="https://github.com/user-attachments/assets/daa08702-3b3c-49bc-8aa9-edb22722a184">
   
   6. В локальной копии в ветке ```patch1``` добавьте в исходный код комментарии.<br>
 
   Добавим комментарии в код с помощью ```vim```<br>
   7. ```commit, push```.<br>
-
+```
+git commit -am "vers with comments"
+it push --set-upstream origin patch1
+```
+Успешно сделали новый коммит и запушили изменения в удалённый репозиторий.
   
   8. Проверьте, что новые изменения есть в созданном на шаге 5 pull-request<br>
-
-  
+  <p><a href="https://github.com/BridgeInSky/Repos/pull/1/commits"
+title="ссылка для проверки">ссылка для проверки </a> <br>
+    
   9. В удалённый репозитории выполните слияние PR patch1 -> master и удалите ветку patch1 в удаленном репозитории.<br>
 
-  
+<img width="50%" height="auto" src="https://github.com/user-attachments/assets/7a136a82-f92d-474f-842e-21993a103c98">
+<br>
+
   10. Локально выполните ```pull```.<br>
 
-  
+```git checkout main``` - перейдем в основную ветку
+```git pull``` - получим все изменения <br>
+  После работы команды получили:
+```
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Распаковка объектов: 100% (1/1), 912 байтов | 912.00 КиБ/с, готово.
+Из https://github.com/BridgeInSky/Repos
+   be0ff97..1ec5861  main       -> origin/main
+Обновление be0ff97..1ec5861
+Fast-forward
+ hello_world.cpp | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+```
   11. С помощью команды ```git log``` просмотрите историю в локальной версии ветки master.<br>
+ <details>
+ <summary>Вывод</summary>
+    </p> <br>
+    
+```
+Merge: be0ff97 7f5eb58
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Fri Mar 7 21:24:28 2025 +0300
 
-  
+    Merge pull request #1 from BridgeInSky/patch1
+    
+    vers. without 'using namespace std;'
+
+commit 7f5eb5829f9dd7c1946f9b2d0ff4a053ac5ad595
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Fri Mar 7 20:54:10 2025 +0300
+
+    vers with comments
+
+commit 5a502918dabb3b69658f10bdd32c2689279f1f16
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Fri Mar 7 18:48:16 2025 +0300
+
+    vers. without 'using namespace std;'
+
+commit be0ff9704c4fd94f91b6257393c0559f6ea15f18
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Wed Mar 5 19:33:09 2025 +0300
+
+    Update hello_world.cpp to ask for user's name
+
+commit 5b280533d3d7cc6bd6e282da927a4039d9a441dc
+Author: BridgeInSkycommit 1ec58612dd7aff33c013d941cc6096f056a4ff6a
+Merge: be0ff97 7f5eb58
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Fri Mar 7 21:24:28 2025 +0300
+
+    Merge pull request #1 from BridgeInSky/patch1
+    
+    vers. without 'using namespace std;'
+
+commit 7f5eb5829f9dd7c1946f9b2d0ff4a053ac5ad595
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Fri Mar 7 20:54:10 2025 +0300
+
+    vers with comments
+
+commit 5a502918dabb3b69658f10bdd32c2689279f1f16
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Fri Mar 7 18:48:16 2025 +0300
+
+    vers. without 'using namespace std;'
+
+commit be0ff9704c4fd94f91b6257393c0559f6ea15f18
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Wed Mar 5 19:33:09 2025 +0300
+
+    Update hello_world.cpp to ask for user's name
+
+commit 5b280533d3d7cc6bd6e282da927a4039d9a441dc
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Wed Mar 5 19:27:43 2025 +0300
+
+    Add hello_world.cpp with basic Hello World program
+
+commit 5f08acca2256bb0df654c8ff0f9dea3506b3756e
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Wed Mar 5 18:55:20 2025 +0300
+
+    first commit <brizhanskaializa@gmail.com>
+Date:   Wed Mar 5 19:27:43 2025 +0300
+
+    Add hello_world.cpp with basic Hello World program
+
+commit 5f08acca2256bb0df654c8ff0f9dea3506b3756e
+Author: BridgeInSky <brizhanskaializa@gmail.com>
+Date:   Wed Mar 5 18:55:20 2025 +0300
+
+    first commit
+```
+  </p>
+</details> <br>
   12. Удалите локальную ветку ```patch1```.<br>
 
-  
+```git branch -d patch1``` - удаляем ветку <br>
+```git fetch --prune``` - удаляем информацию о ветке
+  </p>
+</details>
