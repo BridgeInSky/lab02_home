@@ -210,11 +210,11 @@ branch 'patch1' set up to track 'origin/patch1'.
 <p><a href="https://github.com/BridgeInSky/Repos/branches"
 title="ссылка для проверки доступа ветки">ссылка для проверки доступа ветки</a> <br>
   5. Создайте ```pull-request patch1 -> master```.<br>
-
+<img width="50%" height="auto" src="https://github.com/user-attachments/assets/daa08702-3b3c-49bc-8aa9-edb22722a184">
   
   6. В локальной копии в ветке ```patch1``` добавьте в исходный код комментарии.<br>
 
-  
+  Добавим комментарии в код с помощью ```vim```<br>
   7. ```commit, push```.<br>
 
   
