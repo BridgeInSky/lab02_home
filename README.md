@@ -338,3 +338,47 @@ Date:   Wed Mar 5 18:55:20 2025 +0300
 ```git fetch --prune``` - удаляем информацию о ветке
   </p>
 </details>
+
+<details>
+  <summary>Part 3</summary>
+    </p>
+  <br>
+  
+1. Создайте новую локальную ветку patch2.
+```
+git branch patch2 // Содание новой ветки
+git checkout patch2 // Переход в новую ветку
+```
+2. Измените code style с помощью утилиты clang-format. Например, используя опцию -style=Mozilla.
+```
+clang-format -style=Mozilla -i hello_world.cpp
+```
+Формат изменен
+3. commit, push, создайте pull-request patch2 -> master.
+```
+git commit -am "chenged style 'hello_world.cpp'"
+git push --set-upstream origin patch2
+```
+pull-request содаётся через интерфейс сайта Git-Hub. <br>
+4. В ветке master в удаленном репозитории измените комментарии, например, расставьте знаки препинания, переведите комментарии на другой язык.
+Делаем изменения в файле hello_world.cpp на сайте GitHub. Поменяем язык коментариевс русского на английский. <br>
+5. Убедитесь, что в pull-request появились конфликтны.<br>
+<img width="50%" height="auto" src="https://github.com/user-attachments/assets/3cbbb07b-9e29-4620-b025-5cf78d44d1c9">
+
+6. Для этого локально выполните pull + rebase (точную последовательность команд, следует узнать самостоятельно). Исправьте конфликты.
+```
+git pul --rebase origin main //убедились в существовании конфликтов
+vim hello_world.cpp // Исправляем конфликт в файле
+git add hello_world.cpp // Зафиксируем изменения 
+git rebase --continue // Продолжим исправление конфликтов
+```
+7. Сделайте force push в ветку patch2
+```
+git push origin patch2 --force-with-lease
+```
+8. Убедитель, что в pull-request пропали конфликтны.
+<img width="50%" height="auto" src="https://github.com/user-attachments/assets/a7a96edb-46b9-4909-80d8-41de47442040">
+<br>
+Конфликты пропали.<br>
+9. Вмержите pull-request patch2 -> master.
+Это делается на самом сайте GitHub, как  в части 2.
