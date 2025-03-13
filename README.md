@@ -356,7 +356,7 @@ clang-format -style=Mozilla -i hello_world.cpp
 Формат изменен
 3. commit, push, создайте pull-request patch2 -> master.
 ```
-git commit -am "chenged style 'hello_world.cpp'"
+git commit -am "changed style 'hello_world.cpp'"
 git push --set-upstream origin patch2
 ```
 pull-request содаётся через интерфейс сайта Git-Hub. <br>
@@ -367,7 +367,7 @@ pull-request содаётся через интерфейс сайта Git-Hub. 
 
 6. Для этого локально выполните pull + rebase (точную последовательность команд, следует узнать самостоятельно). Исправьте конфликты.
 ```
-git pul --rebase origin main //убедились в существовании конфликтов
+git pull --rebase origin main //убедились в существовании конфликтов
 vim hello_world.cpp // Исправляем конфликт в файле
 git add hello_world.cpp // Зафиксируем изменения 
 git rebase --continue // Продолжим исправление конфликтов
